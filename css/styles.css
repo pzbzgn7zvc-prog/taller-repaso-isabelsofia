@@ -1,0 +1,126 @@
+/* 1. Variables: 3 colores globales en :root (Fase 4, paso 1) */
+:root {
+    --color-mar-profundo: #003049;
+    --color-ola: #0077b6;
+    --color-arena: #caf0f8;
+    --texto-oscuro: #333333;
+}
+
+/* Reseteo básico para que todo se vea bien */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* 2. Flexbox: En el <header> para separar logo a la izquierda y enlaces a la derecha (Fase 4, paso 2) */
+header {
+    background-color: var(--color-mar-profundo);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+/* 3. Hero Image: Imagen de fondo y Flexbox para centrar (Fase 4, paso 3) */
+#inicio {
+    /* Aquí llamamos a la imagen portada.jpg que está en tu carpeta img */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/portada.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    
+    /* Flexbox para centrar el título y el botón en el medio de la pantalla */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+#inicio h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+#inicio .btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: var(--color-ola);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Sección de Proyectos / Maravillas */
+#proyectos {
+    padding: 50px 20px;
+    background-color: var(--color-arena);
+    text-align: center;
+}
+
+#proyectos h2 {
+    color: var(--color-mar-profundo);
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+/* 4. Grid Responsivo: Aplicado al contenedor de las tarjetas (Fase 4, paso 4) */
+.grid-container {
+    display: grid;
+    /* repeat(auto-fit, minmax(...)) para que se acomoden solas dependiendo de la pantalla */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilos de las tarjetas (<article>) */
+article {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+article img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+article h3 {
+    color: var(--color-mar-profundo);
+    margin: 15px 0 10px 0;
+}
+
+article p {
+    color: var(--texto-oscuro);
+    padding: 0 15px 20px 15px;
+    line-height: 1.5;
+}
+
+/* Pie de página */
+footer {
+    background-color: var(--color-mar-profundo);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
