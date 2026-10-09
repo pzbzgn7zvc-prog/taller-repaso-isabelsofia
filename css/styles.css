@@ -1,10 +1,15 @@
 /* 1. Variables: 3 colores globales en :root (Fase 4, paso 1) */
 :root {
+
     --color-mar-profundo: #003049;
     --color-ola: #0077b6;
     --color-arena: #caf0f8;
     --texto-oscuro: #333333;
 }
+body {
+    /* Tus otros estilos... */
+    transition: background-color 0.5s ease, color 0.5s ease;
+    }
 
 /* Reseteo básico para que todo se vea bien */
 * {
@@ -123,4 +128,13 @@ footer {
     color: white;
     text-align: center;
     padding: 20px;
+}
+body.tema-oscuro {
+background-color: #1a1a1a;
+color: #f0f0f0;
+}
+body.tema-oscuro .card {
+background-color: #2c2c2c;
+color: white;
+border: 1px solid #444;
 }
